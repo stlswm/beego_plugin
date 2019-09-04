@@ -18,7 +18,7 @@ func TestRangeNum(t *testing.T) {
 }
 func TestRandomStrNumber(t *testing.T) {
 	for i := 0; i < 1000; i++ {
-		str := rand.RandomStr(i)
+		str := rand.RandomStr(rand.KindAll, 32)
 		t.Log("ok:" + str)
 	}
 }
