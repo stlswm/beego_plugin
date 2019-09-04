@@ -20,7 +20,7 @@ func TestRangeNum(t *testing.T) {
 }
 func TestRandomStrNumber(t *testing.T) {
 	for i := 0; i < 1000; i++ {
-		str := rand.RandomStr(rand.KindNum, 32)
+		str := rand.RandomStr(rand.KindAll, 32)
 		t.Log(str)
 	}
 }
