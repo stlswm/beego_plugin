@@ -2,10 +2,8 @@ package app
 
 import (
 	"github.com/astaxie/beego"
-	"math/rand"
 	"os"
 	"strings"
-	"time"
 )
 
 // 获取运行时临时地址
@@ -31,25 +29,4 @@ func RuntimeSubPath(path string) string {
 		panic(err)
 	}
 	return path
-}
-
-// 指定区间的随机数
-func GenerateRangeNum(min, max int) int {
-	rand.Seed(time.Now().Unix())
-	randNum := rand.Intn(max-min) + min
-	return randNum
-}
-
-// 随机字符串
-func RandStr(l int) string {
-	var randStr string
-	seek := "0123456789"
-	seek += "abcdefghijklmnopqrstuvwxyz"
-	seek += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	totalLen := len(seek)
-	for i := 0; i < l; i++ {
-		k := GenerateRangeNum(0, totalLen-1)
-		randStr += seek[k:(k + 1)]
-	}
-	return randStr
 }
