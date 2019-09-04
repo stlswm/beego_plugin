@@ -13,9 +13,11 @@ const (
 	KindAll    = 4 // 数字、大小写字母
 )
 
+var seededRand = rand.New(rand.NewSource(time.Now().UnixNano()))
+
+// 指定区域的随机数字
 func RangeNum(min, max int) int {
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	randNum := r.Intn(max-min) + min
+	randNum := seededRand.Intn(max-min) + min
 	return randNum
 }
 
