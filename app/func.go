@@ -1,14 +1,14 @@
 package app
 
 import (
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/server/web"
 	"os"
 	"strings"
 )
 
 // 获取运行时临时地址
 func RuntimePath() string {
-	path := beego.AppConfig.String("runtime.path")
+	path, _ := web.AppConfig.String("runtime.path")
 	path = strings.TrimRight(strings.Replace(path, "\\", "/", -1), "/")
 	_, err := os.Stat(path)
 	if os.IsNotExist(err) {

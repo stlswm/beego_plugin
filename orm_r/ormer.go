@@ -2,7 +2,7 @@ package orm_r
 
 import (
 	"database/sql"
-	"github.com/beego/beego/v2/adapter/orm"
+	"github.com/beego/beego/v2/client/orm"
 )
 
 type Ormer struct {
