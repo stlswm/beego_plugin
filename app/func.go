@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// 获取运行时临时地址
+// RuntimePath 获取运行时临时地址
 func RuntimePath() string {
 	path, _ := web.AppConfig.String("runtime.path")
 	path = strings.TrimRight(strings.Replace(path, "\\", "/", -1), "/")
@@ -18,7 +18,7 @@ func RuntimePath() string {
 	return path
 }
 
-// 获取运行时临时地址子目录
+// RuntimeSubPath 获取运行时临时地址子目录
 func RuntimeSubPath(path string) string {
 	path = strings.TrimLeft(strings.Replace(path, "\\", "/", -1), "/")
 	tmpPath := RuntimePath()
